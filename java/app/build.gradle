@@ -1,0 +1,11 @@
+plugins {
+  id 'concept.java-application-conventions'
+}
+
+dependencies {
+    implementation project(':library')
+}
+
+application {
+  mainClass = 'App'
+}

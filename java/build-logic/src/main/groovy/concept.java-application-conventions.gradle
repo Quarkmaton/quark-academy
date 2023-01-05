@@ -1,0 +1,4 @@
+plugins {
+  id 'concept.java-common-conventions'
+  id 'application'
+}

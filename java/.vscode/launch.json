@@ -1,0 +1,35 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Launch Duration",
+      "request": "launch",
+      "mainClass": "Duration",
+      "projectName": "app"
+    },
+    {
+      "type": "java",
+      "name": "Launch App",
+      "request": "launch",
+      "mainClass": "App",
+      "projectName": "app",
+      "stepFilters": {
+        "skipClasses": [
+          "$JDK"
+        ]
+      }
+    },
+    {
+      "type": "java",
+      "name": "Launch Current File",
+      "request": "launch",
+      "mainClass": "${file}",
+      "stepFilters": {
+        "skipClasses": [
+          "$JDK"
+        ]
+      }
+    }
+  ]
+}
