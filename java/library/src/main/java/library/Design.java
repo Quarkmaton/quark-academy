@@ -12,7 +12,7 @@ public final class Design {
    * 1 2 3 4
    * 1 2 3 4
    */
-  public static void print_q_fii_ph(int lines) {
+  public static void sqr_incV_incH_prnH(int lines) {
     for (int v = 1; v <= lines; v++) {
       for (int h = 1; h <= lines; h++) {
         System.out.print(h + " ");
@@ -27,7 +27,7 @@ public final class Design {
    * 3 3 3 3
    * 4 4 4 4
    */
-  public static void print_q_fii_pv(int lines) {
+  public static void sqr_incV_incH_prnV(int lines) {
     for (int v = 1; v <= lines; v++) {
       for (int h = 1; h <= lines; h++) {
         System.out.print(v + " ");
@@ -42,7 +42,7 @@ public final class Design {
    * 4 3 2 1
    * 4 3 2 1
    */
-  public static void print_q_fid_ph(int lines) {
+  public static void sqr_incV_decH_prnH(int lines) {
     for (int v = 1; v <= lines; v++) {
       for (int h = lines; h >= 1; h--) {
         System.out.print(h + " ");
@@ -57,7 +57,7 @@ public final class Design {
    * 2 2 2 2
    * 1 1 1 1
    */
-  public static void print_q_fdi_pv(int lines) {
+  public static void sqr_decV_incH_prnV(int lines) {
     for (int v = lines; v >= 1; v--) {
       for (int h = 1; h <= lines; h++) {
         System.out.print(v + " ");
@@ -72,7 +72,7 @@ public final class Design {
    * 1 2 3
    * 1 2 3 4
    */
-  public static void print_t_fii_ph(int lines) {
+  public static void trn_incV_incH_prnH(int lines) {
     for (int v = 1; v <= lines; v++) {
       for (int h = 1; h <= v; h++) {
         System.out.print(h + " ");
@@ -87,7 +87,7 @@ public final class Design {
    * 3 3 3
    * 4 4 4 4
    */
-  public static void print_t_fii_pv(int lines) {
+  public static void trn_incV_incH_prnV(int lines) {
     for (int v = 1; v <= lines; v++) {
       for (int h = 1; h <= v; h++) {
         System.out.print(v + " ");
@@ -102,7 +102,7 @@ public final class Design {
    * 3 2 1
    * 4 3 2 1
    */
-  public static void print_t_fid_ph(int lines) {
+  public static void trn_incV_decH_prnH(int lines) {
     for (int v = 1; v <= lines; v++) {
       for (int h = v; h >= 1; h--) {
         System.out.print(h + " ");
@@ -117,7 +117,7 @@ public final class Design {
    * 2 2
    * 1
    */
-  public static void print_t_fdi_pv(int lines) {
+  public static void trn_decV_incH_prnV(int lines) {
     for (int v = lines; v >= 1; v--) {
       for (int h = 1; h <= v; h++) {
         System.out.print(v + " ");
@@ -132,7 +132,7 @@ public final class Design {
    * 1 2
    * 1
    */
-  public static void print_t_fdi_ph(int lines) {
+  public static void trn_decV_incH_prnH(int lines) {
     for (int v = lines; v >= 1; v--) {
       for (int h = 1; h <= v; h++) {
         System.out.print(h + " ");
@@ -147,7 +147,7 @@ public final class Design {
    * 2 1
    * 1
    */
-  public static void print_t_fdd_ph(int lines) {
+  public static void trn_decV_decH_prnH(int lines) {
     for (int v = lines; v >= 1; v--) {
       for (int h = v; h >= 1; h--) {
         System.out.print(h + " ");
@@ -162,7 +162,7 @@ public final class Design {
    * 4 3 2
    * 4 3 2 1
    */
-  public static void print_t_fii_plh(int lines) {
+  public static void trn_incV_incH_prnLH(int lines) {
     for (int v = 1; v <= lines; v++) {
       for (int h = 1; h <= v; h++) {
         System.out.print(lines - h + 1 + " ");
@@ -177,7 +177,7 @@ public final class Design {
    * 2 2 2
    * 1 1 1 1
    */
-  public static void print_t_fii_plv(int lines) {
+  public static void trn_incV_incH_prnLV(int lines) {
     for (int v = 1; v <= lines; v++) {
       for (int h = 1; h <= v; h++) {
         System.out.print(lines - v + 1 + " ");
@@ -192,7 +192,7 @@ public final class Design {
    * 2 3 4
    * 1 2 3 4
    */
-  public static void print_t_fid_plh(int lines) {
+  public static void trn_incV_decH_prnLHH(int lines) {
     for (int v = 1; v <= lines; v++) {
       for (int h = v; h >= 1; h--) {
         System.out.print(lines - h + 1 + " ");
@@ -207,7 +207,7 @@ public final class Design {
    * 3 3
    * 4
    */
-  public static void print_t_fdi_plv(int lines) {
+  public static void trn_decV_incH_prnLV(int lines) {
     for (int v = lines; v >= 1; v--) {
       for (int h = 1; h <= v; h++) {
         System.out.print(lines - v + 1 + " ");
@@ -222,7 +222,7 @@ public final class Design {
    * 4 3
    * 4
    */
-  public static void print_t_fdi_plh(int lines) {
+  public static void trn_decV_incH_prnLH(int lines) {
     for (int v = lines; v >= 1; v--) {
       for (int h = 1; h <= v; h++) {
         System.out.print(lines - h + 1 + " ");
@@ -237,7 +237,7 @@ public final class Design {
    * 3 4
    * 4
    */
-  public static void print_t_fdd_plh(int lines) {
+  public static void trn_decV_decH_prnLH(int lines) {
     for (int v = lines; v >= 1; v--) {
       for (int h = v; h >= 1; h--) {
         System.out.print(lines - h + 1 + " ");
@@ -253,7 +253,7 @@ public final class Design {
    * 7 8 9 10
    * 11 12 13 14 15
    */
-  public static void print_t_fii_pk(int lines) {
+  public static void trn_incV_incH_prnK(int lines) {
     int k = 1;
     for (int v = 1; v <= lines; v++) {
       for (int h = 1; h <= v; h++, k++) {
@@ -270,7 +270,7 @@ public final class Design {
    * 128 256 512 1024
    * 2048 4096 8192 16384 32768
    */
-  public static void print_t_fii_pk2(int lines) {
+  public static void trn_incV_incH_prnK2(int lines) {
     long k = 2;
     for (int v = 1; v <= lines; v++) {
       for (int h = 1; h <= v; h++, k *= 2) {
@@ -286,7 +286,7 @@ public final class Design {
    * --3 3 3
    * 4 4 4 4
    */
-  public static void print_t_fiid_pv(int lines) {
+  public static void trn_incV_incH_decS_prnV(int lines) {
     for (int v = 1; v <= lines; v++) {
       for (int s = lines; s > v; s--) {
         System.out.print("  "); // 2 spaces
@@ -304,7 +304,7 @@ public final class Design {
    * ----2 2
    * ------1
    */
-  public static void print_t_fdii_pv(int lines) {
+  public static void trn_decV_incH_incS_prnV(int lines) {
     for (int v = lines; v >= 1; v--) {
       for (int s = v; s < lines; s++) {
         System.out.print("  "); // 2 spaces
@@ -325,7 +325,7 @@ public final class Design {
    * ----2 2
    * ------1
    */
-  public static void print_t_fx_td(int lines) {
+  public static void rgh_top_btm_trn(int lines) {
     // Top Half
     for (int v = 1; v <= lines; v++) {
       for (int s = lines; s > v; s--) {
@@ -357,7 +357,7 @@ public final class Design {
    * --3 3 3 3 3
    * 4 4 4 4 4 4 4 4
    */
-  public static void print_t_fx_lr(int lines) {
+  public static void lft_rgh_top_trn(int lines) {
     for (int v = 1; v <= lines; v++) {
       for (int s = lines; s > v; s--) {
         System.out.print("  "); // 2 spaces
@@ -381,7 +381,7 @@ public final class Design {
    * ------2 2 2
    * --------1
    */
-  public static void print_q_fx_tdlr(int lines) {
+  public static void lft_rgh_top_btm_trn(int lines) {
     // Top Half
     for (int v = 1; v <= lines; v++) {
       for (int s = lines; s > v; s--) {
@@ -419,7 +419,7 @@ public final class Design {
    * R E P U B L I
    * R E P U B L I C
    */
-  public static void print_t_fx_ps(String text) {
+  public static void lft_str_trn(String text) {
     int lines = text.length();
 
     for (int v = 1; v <= lines; v++) {
@@ -437,7 +437,7 @@ public final class Design {
    * 1 --- 4
    * 1 2 3 4
    */
-  public static void print_q_fii_phs(int lines) {
+  public static void incBorder_sqr(int lines) {
     for (int v = 1; v <= lines; v++) {
       for (int h = 1; h <= lines; h++) {
         if ((v > 1 && h > 1) && (v < lines && h < lines)) // (2, 2) - (3, 3)
@@ -455,7 +455,7 @@ public final class Design {
    * 3 --- 2
    * 4 3 2 1
    */
-  public static void print_q_fii_prs(int lines) {
+  public static void cylBorder_sqr(int lines) {
     int l = 1;
     int r = lines;
     int t = l + 1;
