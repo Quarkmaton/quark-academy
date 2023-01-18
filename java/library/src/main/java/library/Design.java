@@ -1,5 +1,7 @@
 package library;
 
+// CHECKSTYLE:OFF
+
 public final class Design {
   private Design() {
   }
@@ -261,6 +263,13 @@ public final class Design {
     }
   }
 
+  /*
+   * 2
+   * 4 8
+   * 16 32 64
+   * 128 256 512 1024
+   * 2048 4096 8192 16384 32768
+   */
   public static void print_t_fii_pk2(int lines) {
     long k = 2;
     for (int v = 1; v <= lines; v++) {
@@ -361,6 +370,17 @@ public final class Design {
     }
   }
 
+  /*
+   * --------1
+   * ------2 2 2
+   * ----3 3 3 3 3
+   * --4 4 4 4 4 4 4
+   * 5 5 5 5 5 5 5 5 5
+   * --4 4 4 4 4 4 4
+   * ----3 3 3 3 3
+   * ------2 2 2
+   * --------1
+   */
   public static void print_q_fx_tdlr(int lines) {
     // Top Half
     for (int v = 1; v <= lines; v++) {
@@ -389,6 +409,16 @@ public final class Design {
     }
   }
 
+  /*
+   * R
+   * R E
+   * R E P
+   * R E P U
+   * R E P U B
+   * R E P U B L
+   * R E P U B L I
+   * R E P U B L I C
+   */
   public static void print_t_fx_ps(String text) {
     int lines = text.length();
 
@@ -400,4 +430,53 @@ public final class Design {
       System.out.println();
     }
   }
+
+  /*
+   * 1 2 3 4
+   * 1 --- 4
+   * 1 --- 4
+   * 1 2 3 4
+   */
+  public static void print_q_fii_phs(int lines) {
+    for (int v = 1; v <= lines; v++) {
+      for (int h = 1; h <= lines; h++) {
+        if ((v > 1 && h > 1) && (v < lines && h < lines)) // (2, 2) - (3, 3)
+          System.out.print("  ");
+        else
+          System.out.print(h + " ");
+      }
+      System.out.println();
+    }
+  }
+
+  /*
+   * 1 2 3 4
+   * 2 --- 3
+   * 3 --- 2
+   * 4 3 2 1
+   */
+  public static void print_q_fii_prs(int lines) {
+    int l = 1;
+    int r = lines;
+    int t = l + 1;
+    int b = r - 1;
+
+    for (int v = 1; v <= lines; v++) {
+      for (int h = 1; h <= lines; h++) {
+        if (h == 1)
+          System.out.print(l++ + " ");
+        else if (h == lines)
+          System.out.print(r-- + " ");
+        else if (v == 1)
+          System.out.print(t++ + " ");
+        else if (v == lines)
+          System.out.print(b-- + " ");
+        else
+          System.out.print("  ");
+      }
+      System.out.println();
+    }
+  }
 }
+
+// CHECKSTYLE:ON

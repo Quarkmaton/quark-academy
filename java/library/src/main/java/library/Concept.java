@@ -48,7 +48,7 @@ public class Concept {
     // Process 2
     System.out.println("Name: Olivia");
     System.out.println("Age: 20 yr");
-    System.out.print("Gender: F");
+    System.out.println("Gender: F");
     System.out.println("Weight: 60 kg");
     System.out.println("Height: 177.8 cm");
   }
@@ -77,14 +77,14 @@ public class Concept {
    * -- 0.9 (Probability of raining today)
    */
   public static void ioAndBscExprC() {
-    // Process 1
+    // Alternative Process 1
     // System.out.println("Name: " + "Olivia");
     // System.out.println("Age: " + 20 + " yr");
     // System.out.print("Gender: " + 'F');
     // System.out.println("Weight: " + 60 + " kg");
     // System.out.println("Height: " + 177.8 + " cm");
 
-    // Process 2
+    // Alternative Process 2
     // String name;
     // int age, gender;
     // double weight, height;
@@ -118,6 +118,7 @@ public class Concept {
   /**
    * Concept:
    * - How to read data from user?
+   * - How to import others code?
    * - Why is there no similarity between input and output statments?
    *
    * Exercise:
@@ -308,10 +309,10 @@ public class Concept {
     System.out.print("Enter a: ");
     int a = in.nextInt();
 
-    System.out.print("Enter b:    ");
+    System.out.print("Enter b: ");
     int b = in.nextInt();
 
-    System.out.print("Enter c:     ");
+    System.out.print("Enter c: ");
     int c = in.nextInt();
 
     int discriminant = (b * b) - (4 * a * c);
@@ -338,7 +339,7 @@ public class Concept {
     System.out.print("Enter total marks of all subjects: ");
     int t = in.nextInt();
 
-    // Process 1
+    // Alternative Process 1:
     // int percent = (b + c + p) * 100 / t;
 
     double percent = (b + c + p) * 100.0 / t;
@@ -373,74 +374,126 @@ public class Concept {
     double si = (p * r * t) / 100.0;
     double ci = p * Math.pow(1 + r / 100.0, t) - p;
 
-    System.out.println("Simple Interest payable:     " + si);
+    System.out.println("Simple Interest payable: " + si);
     System.out.println("Compound Interest payable: " + ci);
 
     in.close();
   }
 
+  /**
+   * Concept:
+   * - How to perform selection?
+   * - What are the three types of tasks/statements?
+   *
+   * Exercise:
+   * - Check if a user is senior or adult/minor based on age.
+   */
   public void ifAndBoolExprA() {
     Scanner in = new Scanner(System.in);
 
     System.out.print("Enter age: ");
     int age = in.nextInt();
+    int year = 2023 - age;
 
-    if (age > 59)
-      System.out.println("User is Senior Citizen");
+    if (age > 59) {
+      System.out.println("User is a Senior Citizen");
+    }
 
-    System.out.println("Thank you.");
+    System.out.println("Birth year is: " + year);
     in.close();
   }
 
+  /**
+   * Concept:
+   * - How to use else statements?
+   *
+   * Exercise:
+   * - Check if a user is senior, adult, or minor based on age.
+   */
   public void ifAndBoolExprB() {
     Scanner in = new Scanner(System.in);
 
     System.out.print("Enter age: ");
     int age = in.nextInt();
 
-    if (age > 59)
+    // Alternative Process 1:
+    // if (age > 59)
+    // System.out.println("User is Senior Citizen");
+    // if (age <= 59)
+    // System.out.println("User is Adult/Minor Citizen");
+
+    if (age > 59) {
       System.out.println("User is Senior Citizen");
-    else
+    } else {
       System.out.println("User is Adult/Minor Citizen");
+    }
 
     System.out.println("Thank you.");
     in.close();
   }
 
+  /**
+   * Concept:
+   * - How to use nested if statements?
+   * - How to use if-else-if statements?
+   *
+   * Exercise:
+   * - Check if a user is super-senior, senior, adult, or minor based on age.
+   */
   public void ifAndBoolExprC() {
     Scanner in = new Scanner(System.in);
 
     System.out.print("Enter age: ");
     int age = in.nextInt();
 
-    if (age > 59)
+    // Alternative Process 1:
+    // if (age > 59)
+    // System.out.println("User is Senior Citizen");
+    // else {
+    // if (age > 17)
+    // System.out.println("User is Adult Citizen");
+    // else
+    // System.out.println("User is Minor Citizen");
+    // }
+
+    if (age > 59) {
       System.out.println("User is Senior Citizen");
-    else if (age > 17)
+    } else if (age > 17) {
       System.out.println("User is Adult Citizen");
-    else
+    } else {
       System.out.println("User is Minor Citizen");
+    }
 
     System.out.println("Thank you.");
     in.close();
   }
 
+  /*
+   * Concept:
+   * - How to use nested if-else-if statements?
+   *
+   * Exercise:
+   * - Add a new statement to check if a user is newborn baby.
+   */
   public void ifAndBoolExprD() {
     Scanner in = new Scanner(System.in);
 
     System.out.print("Enter age: ");
     int age = in.nextInt();
 
-    if (age > 59)
-      if (age > 79)
+    if (age > 59) {
+      if (age > 79) {
         System.out.println("User is Super Senior Citizen");
-      else
+      } else {
         System.out.println("User is Senior Citizen");
-    else if (age > 17)
+      }
+    } else if (age > 17) {
       System.out.println("User is Adult Citizen");
-    else
+    } else {
       System.out.println("User is Minor Citizen");
+    }
 
-    // Process 2:
+    // Alternative Process 1:
     // if (age > 79)
     // System.out.println("User is Super Senior Citizen");
     // else if (age > 59)
@@ -454,6 +507,9 @@ public class Concept {
     in.close();
   }
 
+  /**
+   * Find if a number is positive, negative or zero.
+   */
   public static void ifAndBoolExprNumberLine() {
     Scanner in = new Scanner(System.in);
 
@@ -482,6 +538,9 @@ public class Concept {
     in.close();
   }
 
+  /**
+   * Find if a number is even or odd.
+   */
   public static void ifAndBoolExprEvenOdd() {
     Scanner in = new Scanner(System.in);
 
@@ -499,6 +558,9 @@ public class Concept {
     in.close();
   }
 
+  /**
+   * Find if a number N is divisible by another number F.
+   */
   public static void ifAndBoolExprDivisibility() {
     Scanner in = new Scanner(System.in);
 
@@ -519,6 +581,9 @@ public class Concept {
     in.close();
   }
 
+  /**
+   * Find the smaller between two numbers.
+   */
   public static void ifAndBoolExprMinimum() {
     Scanner in = new Scanner(System.in);
 
@@ -539,6 +604,9 @@ public class Concept {
     in.close();
   }
 
+  /**
+   * Find if an angle is acute, right, or obtuse angle.
+   */
   public static void ifAndBoolExprAngleType() {
     Scanner in = new Scanner(System.in);
 
@@ -558,6 +626,9 @@ public class Concept {
     in.close();
   }
 
+  /**
+   * Find if three angles can form a triangle.
+   */
   public static void ifAndBoolExprAngleSum() {
     Scanner in = new Scanner(System.in);
 
@@ -581,6 +652,9 @@ public class Concept {
     in.close();
   }
 
+  /**
+   * Find if two angles form special pairs that sum to 90 or 180.
+   */
   public static void ifAndBoolExprAnglePair() {
     Scanner in = new Scanner(System.in);
 
@@ -601,6 +675,9 @@ public class Concept {
     in.close();
   }
 
+  /**
+   * Find if three sides can form a triangle.
+   */
   public static void ifAndBoolExprTriangleInequality() {
     Scanner in = new Scanner(System.in);
 
@@ -626,6 +703,9 @@ public class Concept {
     in.close();
   }
 
+  /**
+   * Find the season (Summer, Winter, Spring, Autumn) based on a month number.
+   */
   public static void ifAndBoolExprSeason() {
     Scanner in = new Scanner(System.in);
 
@@ -634,25 +714,24 @@ public class Concept {
 
     String season;
 
-    // Process 1:
-    if (m == 3 || m == 4 || m == 5) {
-      season = "Spring";
-    } else if (m == 6 || m == 7 || m == 8) {
-      season = "Summer";
-    } else if (m == 9 || m == 10 || m == 11) {
-      season = "Autumn";
-    } else if (m == 12 || m == 1 || m == 2) {
-      season = "Winter";
-    } else {
-      season = "Unknown";
-    }
+    // Alternative Process 1:
+    // if (m == 3 || m == 4 || m == 5) {
+    // season = "Spring";
+    // } else if (m == 6 || m == 7 || m == 8) {
+    // season = "Summer";
+    // } else if (m == 9 || m == 10 || m == 11) {
+    // season = "Autumn";
+    // } else if (m == 12 || m == 1 || m == 2) {
+    // season = "Winter";
+    // } else {
+    // season = "Unknown";
+    // }
 
-    // Process 2:
     if (m >= 3 && m <= 5) {
       season = "Spring";
-    } else if (m >= 6 && m == 8) {
+    } else if (m >= 6 && m <= 8) {
       season = "Summer";
-    } else if (m == 9 && m == 11) {
+    } else if (m >= 9 && m <= 11) {
       season = "Autumn";
     } else if (m == 12 || m == 1 || m == 2) {
       season = "Winter";
@@ -665,6 +744,9 @@ public class Concept {
     in.close();
   }
 
+  /**
+   * Find if a coordinate lies in x-axis, y-axis, origin, or in a quadrant.
+   */
   public static void ifAndBoolExprPointOrigin() {
     Scanner in = new Scanner(System.in);
 
@@ -674,7 +756,7 @@ public class Concept {
     System.out.print("Enter y coordinate: ");
     int y = in.nextInt();
 
-    // Warning Process 1:
+    // Slow Process 1:
     // if (x == 0 && y == 0) {
     // System.out.println("Point is at origin.");
     // } else if (x == 0 && y != 0) {
@@ -698,6 +780,9 @@ public class Concept {
     in.close();
   }
 
+  /**
+   * Find the quadrant of a coordinate.
+   */
   public static void ifAndBoolExprPointQuadrant() {
     Scanner in = new Scanner(System.in);
 
@@ -707,7 +792,7 @@ public class Concept {
     System.out.print("Enter y coordinate: ");
     int y = in.nextInt();
 
-    // Warning Process 1:
+    // Slow Process 1:
     // if (x == 0 && y == 0) {
     // System.out.println("Point is at origin.");
     // } else if (x == 0) {
@@ -749,25 +834,199 @@ public class Concept {
     in.close();
   }
 
-  public static void ifAndBoolExprPointLeapYear() {
+  /**
+   * Find if a year is leap year or not.
+   */
+  public static void ifAndBoolExprLeapYear() {
     Scanner in = new Scanner(System.in);
 
     System.out.print("Enter year: ");
     int year = in.nextInt();
 
-    // Wrong Process 1:
+    // Error Process 1:
     // if (year % 4 == 0) {
-    // System.err.println("Leap Year");
+    // System.out.println("Leap Year");
     // }
 
-    // Process 2:
-    if (year % 100 == 0 && year % 400 == 0) {
+    if (year % 100 != 0 && year % 4 == 0) {
       System.out.println("Leap Year");
-    } else if (year % 100 != 0 && year % 4 == 0) {
+    } else if (year % 100 == 0 && year % 400 == 0) {
       System.out.println("Leap Year");
     } else {
       System.out.println("Common Year");
     }
+
+    // Alternative Process 1:
+    // if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
+    // System.out.println("Leap Year");
+    // } else {
+    // System.out.println("Common Year");
+    // }
+
+    in.close();
+  }
+
+  /**
+   * Concept:
+   * - How to print 0 to 9?
+   *
+   * Exercise:
+   * - Print 0 to 99.
+   */
+  public static void whileIterA() {
+    System.out.println(0);
+    System.out.println(1);
+    System.out.println(2);
+    System.out.println(3);
+    System.out.println(4);
+    System.out.println(5);
+    System.out.println(6);
+    System.out.println(7);
+    System.out.println(8);
+    System.out.println(9);
+  }
+
+  /**
+   * Concept:
+   * - How to execute statements repeatedly?
+   * - What is a loop variable?
+   * - What is initialization, condition, and step value in loop?
+   *
+   * Exercise:
+   * - Print 1 to n.
+   */
+  public static void whileIterB() {
+    int i = 0;
+    while (i <= 99) {
+      System.out.println(i);
+      i = i + 1;
+    }
+
+    System.out.println("Thank you.");
+  }
+
+  /**
+   * Concept:
+   * - How to execute statements repeatedly based on input?
+   *
+   * Exercise:
+   * - Print n to 1.
+   */
+  public static void whileIterC() {
+    Scanner in = new Scanner(System.in);
+    System.out.print("Enter range: ");
+    int n = in.nextInt();
+
+    int i = 1;
+    while (i <= n) {
+      System.out.println(i);
+      i = i + 1;
+    }
+
+    System.out.println("Thank you.");
+    in.close();
+  }
+
+  /**
+   * Concept:
+   * - How to execute statements repeatedly by reducing loop variable?
+   * - What is incrementing loop?
+   * - What is decrementing loop?
+   *
+   * Exercise:
+   * - Print n to 1.
+   */
+  public static void whileIterD() {
+    Scanner in = new Scanner(System.in);
+    System.out.print("Enter range: ");
+    int n = in.nextInt();
+
+    int i = n;
+    while (i >= 1) {
+      System.out.println(i);
+      i = i - 1;
+    }
+
+    System.out.println("Thank you.");
+    in.close();
+  }
+
+  /**
+   * Concept:
+   * - How to execute statements infinite times?
+   *
+   * Exercise:
+   * - Print all odd numbers from 1 to n.
+   */
+  public static void whileIterE() {
+    int i = 0;
+    while (true) {
+      System.out.println(i);
+      i = i + 1;
+    }
+
+    // Error Statements:
+    // System.out.println("Thank you.");
+  }
+
+  /**
+   * Concept:
+   * - How to use any amount of step value in loop?
+   *
+   * Exercise:
+   * - Print all multiples of 5 from 0 to 60.
+   */
+  public static void whileIterF() {
+    Scanner in = new Scanner(System.in);
+    System.out.print("Enter range: ");
+    int n = in.nextInt();
+
+    int i = 1;
+    while (i <= n) {
+      System.out.println(i);
+      i = i + 2;
+    }
+
+    System.out.println("Thank you.");
+    in.close();
+  }
+
+  /**
+   * Print the powers of 2 upto 1024.
+   */
+  public static void whileIterPowersOf2() {
+    Scanner in = new Scanner(System.in);
+
+    int i = 2;
+    while (i <= 1024) {
+      System.out.println(i);
+      i = i * 2;
+    }
+
+    in.close();
+  }
+
+  /**
+   * Print the powers of 2 upto 2^20.
+   */
+  public static void whileIterPowerOf2Table() {
+    Scanner in = new Scanner(System.in);
+
+    int i = 2;
+    int j = 2;
+    while (i <= 20) {
+      System.out.println("2 ^ " + i + " = " + j);
+      i = i + 2;
+      j = j * 2;
+    }
+
+    // Slow Process 1:
+    // int i = 2;
+    // while (i <= 20) {
+    // double p = Math.pow(2, i);
+    // System.out.println("2 ^ " + i + " = " + p);
+    // i = i + 2;
+    // }
 
     in.close();
   }

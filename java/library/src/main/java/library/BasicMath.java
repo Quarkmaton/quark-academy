@@ -14,6 +14,9 @@ public final class BasicMath {
   }
 
   public static int min(int a, int b, int c) {
+    // Alternative Process 1:
+    // return min(a, min(b, c));
+
     int min = a;
     if (b < min) {
       min = b;
@@ -30,11 +33,7 @@ public final class BasicMath {
   }
 
   public static boolean isPrime(int number) {
-    if (number < 2) {
-      return false;
-    }
-
-    boolean isPrimeNum = true;
+    boolean isPrimeNum = number > 2;
     for (int d = 2; d * d < number; d++) {
       if (number % d == 0) {
         isPrimeNum = false;
@@ -45,16 +44,16 @@ public final class BasicMath {
     return isPrimeNum;
   }
 
-  public static boolean isPerfectSquare(int number) {
-    boolean isPerfectSquareNum = false;
+  public static boolean isSquare(int number) {
+    boolean isSquareNum = false;
     for (int d = 2; d * d < number; d++) {
       if (number % d == 0 && number / d == d) {
-        isPerfectSquareNum = true;
+        isSquareNum = true;
         break;
       }
     }
 
-    return isPerfectSquareNum;
+    return isSquareNum;
   }
 
   public static long power(int base, int exponent) {
@@ -67,13 +66,9 @@ public final class BasicMath {
     return result;
   }
 
-  public static long factorial(int value) {
-    if (value == 0) {
-      return 1;
-    }
-
+  public static long factorial(int number) {
     long result = 1;
-    for (int i = 2; i <= value; i++) {
+    for (int i = 2; i <= number; i++) {
       result *= i;
     }
 

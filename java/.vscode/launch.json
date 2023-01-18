@@ -3,21 +3,12 @@
   "configurations": [
     {
       "type": "java",
-      "name": "Launch Duration",
-      "request": "launch",
-      "mainClass": "Duration",
-      "projectName": "app"
-    },
-    {
-      "type": "java",
       "name": "Launch App",
       "request": "launch",
       "mainClass": "App",
       "projectName": "app",
       "stepFilters": {
-        "skipClasses": [
-          "$JDK"
-        ]
+        "skipClasses": ["$JDK"]
       }
     },
     {
@@ -26,9 +17,7 @@
       "request": "launch",
       "mainClass": "${file}",
       "stepFilters": {
-        "skipClasses": [
-          "$JDK"
-        ]
+        "skipClasses": ["$JDK"]
       }
     }
   ]

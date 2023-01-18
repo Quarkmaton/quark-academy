@@ -27,17 +27,20 @@ public final class RecreationalMath {
   }
 
   public static int minFrequentDigit(int number) {
+    /*
+     * TASK(author): Improve it using an array.
+     */
+
     int minFrequentDigit = 0;
     int minFrequency = Integer.MAX_VALUE;
-    int currentDigit = 0;
 
-    while (currentDigit <= 9) {
+    for (int d = 0; d <= 9; d++) {
       int currentFrequency = 0;
       int temp = number;
 
       while (temp != 0) {
         int lastDigit = temp % 10;
-        if (lastDigit == currentDigit) {
+        if (lastDigit == d) {
           currentFrequency += 1;
         }
         temp /= 10;
@@ -45,27 +48,28 @@ public final class RecreationalMath {
 
       if (currentFrequency != 0 && currentFrequency < minFrequency) {
         minFrequency = currentFrequency;
-        minFrequentDigit = currentDigit;
+        minFrequentDigit = d;
       }
-
-      currentDigit += 1;
     }
 
     return minFrequentDigit;
   }
 
   public static int maxFrequentDigit(int number) {
+    /*
+     * TASK(author): Improve it using an array.
+     */
+
     int maxFrequentDigit = 0;
     int maxFrequency = Integer.MIN_VALUE;
-    int currentDigit = 0;
 
-    while (currentDigit <= 9) {
+    for (int d = 0; d <= 9; d++) {
       int currentFrequency = 0;
       int temp = number;
 
       while (temp != 0) {
         int lastDigit = temp % 10;
-        if (lastDigit == currentDigit) {
+        if (lastDigit == d) {
           currentFrequency += 1;
         }
         temp /= 10;
@@ -73,10 +77,8 @@ public final class RecreationalMath {
 
       if (currentFrequency != 0 && currentFrequency > maxFrequency) {
         maxFrequency = currentFrequency;
-        maxFrequentDigit = currentDigit;
+        maxFrequentDigit = d;
       }
-
-      currentDigit += 1;
     }
 
     return maxFrequentDigit;
@@ -104,43 +106,40 @@ public final class RecreationalMath {
     return sum;
   }
 
-  public static boolean isNiven(int number) {
+  public static boolean isHarshad(int number) {
     int sum = getDigitsSum(number);
-    if (sum == 0) {
-      return false;
-    }
-
-    return number % sum == 0;
+    return sum != 0 && number % sum == 0;
   }
 
   public static boolean isPerfect(int number) {
     return getDivisorsSum(number) == number;
   }
 
-  public static boolean isPalindrome(int number) {
-    if (number < 0) {
-      return false;
-    }
+  public static boolean isPalindromic(int number) {
+    return number > 0 && BasicMath.reverse(number) == number;
+  }
 
-    int temp = number;
+  public static boolean isMunchausen(int number) {
     int result = 0;
+    int temp;
 
+    temp = number;
     while (temp != 0) {
       int lastDigit = temp % 10;
-      result = result * 10 + lastDigit;
+      result += (int) Math.pow(lastDigit, lastDigit);
       temp /= 10;
     }
 
     return result == number;
   }
 
-  public static boolean isPeterson(int number) {
+  public static boolean isFactorion(int number) {
     /*
-     * TASK(me): Improve it using an array.
+     * TASK(author): Improve it using an array.
      */
 
-    int temp = number;
     int result = 0;
+    int temp = number;
 
     while (temp != 0) {
       int lastDigit = temp % 10;
@@ -151,26 +150,49 @@ public final class RecreationalMath {
     return result == number;
   }
 
-  public static boolean isArmstrong(int number) {
+  public static boolean isNarcissistic(int number) {
     int digitsCount = 0;
     int result = 0;
     int temp;
 
-    // Count digits in number.
     temp = number;
     while (temp != 0) {
       digitsCount += 1;
       temp /= 10;
     }
-    // Sum the digits to the power of total digits.
+
     temp = number;
     while (temp != 0) {
       int lastDigit = temp % 10;
       result += (int) Math.pow(lastDigit, digitsCount);
-      temp = temp / 10;
+      temp /= 10;
     }
 
     return result == number;
+  }
+
+  public static boolean isPolydivisible(int number) {
+    boolean isPoldivNum = true;
+    int digitsCount = 0;
+    int temp;
+
+    temp = number;
+    while (temp != 0) {
+      digitsCount += 1;
+      temp /= 10;
+    }
+
+    temp = number;
+    while (temp > 9) {
+      if (temp % digitsCount != 0) {
+        isPoldivNum = false;
+        break;
+      }
+      digitsCount -= 1;
+      temp /= 10;
+    }
+
+    return isPoldivNum;
   }
 
   public static boolean isAutomorphic(int number) {
@@ -204,15 +226,15 @@ public final class RecreationalMath {
   }
 
   public static boolean isKaprekar(int number) {
-    int square = number * number;
+    boolean isKapNum = false;
     int digitsCount = 0;
+    int square = number * number;
 
     while (square != 0) {
       digitsCount += 1;
       square /= 10;
     }
 
-    boolean isKaprekarNum = false;
     for (int i = 1; i <= digitsCount; i++) {
       int part = (int) Math.pow(10, i);
       if (part == number) {
@@ -221,12 +243,12 @@ public final class RecreationalMath {
 
       int sum = square / part + square % part;
       if (sum == number) {
-        isKaprekarNum = true;
+        isKapNum = true;
         break;
       }
     }
 
-    return isKaprekarNum;
+    return isKapNum;
   }
 
   public static boolean isEvil(int number) {
@@ -243,6 +265,10 @@ public final class RecreationalMath {
     return count % 2 == 0;
   }
 
+  public static boolean isPalindromicPrime(int number) {
+    return isPalindromic(number) && BasicMath.isPrime(number);
+  }
+
   public static boolean isEmirp(int number) {
     if (BasicMath.isPrime(number)) {
       int reverse = BasicMath.reverse(number);
@@ -256,13 +282,5 @@ public final class RecreationalMath {
 
   public static boolean isTwinPrime(int a, int b) {
     return BasicMath.isPrime(a) && BasicMath.isPrime(b) && Math.abs(a - b) == 2;
-  }
-
-  public static boolean isKeith(int number) {
-    throw new UnsupportedOperationException();
-  }
-
-  public static boolean isSphenic(int number) {
-    throw new UnsupportedOperationException();
   }
 }
